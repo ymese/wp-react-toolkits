@@ -5,4 +5,5 @@ node_modules/
 coverage/
 npm-debug.log
 .eslintcache
-.idea
+.idea/
+__tests__/__snapshots__
