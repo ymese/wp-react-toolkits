@@ -3,5 +3,5 @@
 //   demo: require('./demo').default
 // };
 
-module.exports = require('./demo').default;
+module.exports = require('./tab').default;
 
