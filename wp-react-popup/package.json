@@ -58,11 +58,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/ymese/wordpress_react_toolkits"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://ymese.github.io/wordpress_react_toolkits/",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/ymese/wordpress_react_toolkits/issues"
   },
   "jest": {
     "collectCoverage": true,
@@ -81,7 +81,8 @@
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate"
+    "wordpress",
+    "wordpress plugin"
   ],
   "license": "MIT",
   "pre-push": [
