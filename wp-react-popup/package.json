@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
-  "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
-  "version": "6.1.2",
+  "name": "wp-react-toolkits",
+  "description": "WordPress react tool kits for developers",
+  "author": "BWPS",
+  "user": "gaupoit",
+  "version": "1.0.0",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",
@@ -73,6 +73,9 @@
     "moduleDirectories": [
       "node_modules",
       "packages"
+    ],
+    "modulePathIgnorePatterns" : [
+      "examples/*"
     ]
   },
   "keywords": [
