@@ -1,20 +1,19 @@
-// import React from 'react';
-// import {
-//   renderIntoDocument,
-//   findRenderedDOMComponentWithClass,
-//   findRenderedDOMComponentWithTag,
-//   Simulate
-// } from 'react-addons-test-utils';
-import { expect } from 'chai';
-import { demo } from '../dist-modules';
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+
+// import { expect } from 'chai';
+import Link from '../dist-modules';
 
 describe('Boilerplate', function () {
-  it('should do boilerplate things', function () {
+  it('should render correctly', function () {
     // TODO: test something now
-    expect(true).to.equal(true);
-  });
+    const component = renderer
+      .create(
+        <Link page="https://ymese.com">Ymese 123</Link>
+      )
+      .toJSON();
 
-  it('should return three', function () {
-    expect(demo()).to.equal(3);
+    expect(component).toMatchSnapshot();
   });
 });

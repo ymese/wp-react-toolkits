@@ -1,4 +1,11 @@
-const demo = () => 3;
+import React, { Component } from 'react';
 
-export default demo;
+function Link(props) {
+  return (
+    <a href={props.page || '#'}>
+      {props.children}
+    </a>
+  );
+}
 
+export default Link;
