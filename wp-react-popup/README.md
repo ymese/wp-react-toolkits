@@ -1,14 +1,14 @@
 [![build status](https://secure.travis-ci.org/survivejs/react-component-boilerplate.svg)](http://travis-ci.org/survivejs/react-component-boilerplate) [![bitHound Score](https://www.bithound.io/github/survivejs/react-component-boilerplate/badges/score.svg)](https://www.bithound.io/github/survivejs/react-component-boilerplate) [![Dependency Status](https://david-dm.org/survivejs/react-component-boilerplate.svg)](https://david-dm.org/survivejs/react-component-boilerplate)
 
-# wordpress_react_toolkits - Useful React toolkit for WordPress Developer
+# WordPress React Tool Kits - Useful React toolkit for WordPress Developer
 
-This is a simple boilerplate that has been developed to make it easier to develop React components and small projects.
+This project helps WordPress develop to re-use React tool kits for their plugins.
 
 > Check out [BWPS - Webpack and React](http://bwps.com/) to dig deeper into the topic.
 
 ## Basic Usage
 
-Clone the repo : `git clone https://github.com/survivejs/react-component-boilerplate my-component`.
+Clone the repo : `git clone https://github.com/ymese/ymese.github.io`.
 
 To get started with fresh history, do this:
 
@@ -38,5 +38,5 @@ console.log(a + b);
 
 ## License
 
-*react-component-boilerplate* is available under MIT. See LICENSE for more details.
+*wordpress_react_toolkits* is available under MIT. See LICENSE for more details.
 
