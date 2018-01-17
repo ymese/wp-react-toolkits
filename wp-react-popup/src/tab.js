@@ -22,12 +22,9 @@ export default class WpTab extends Component {
   }
   renderTabPanels() {
     const { tabs } = this.props;
-    console.log(tabs
-      .map(t => t.panel)
-      .map(panel => panel));
     return tabs
       .map(t => t.panel)
-      .map(panel => panel);
+      .map((panel, key) => <TabPanel key={`${key}_panel`}>{panel}</TabPanel>);
   }
 
 }

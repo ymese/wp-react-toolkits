@@ -16,14 +16,23 @@ const pages = [
     path: '/',
     title: 'Introduction',
     content: pageLoader(() => import('../README.md'))
+  },
+  {
+    path: '/demo',
+    title: 'Demo',
   }
 ];
 
 // Catalog - logoSrc="../images/logo.png"
+const tabs = [{
+  name: 'First tab',
+  panel: <div>This is first tab</div>
+}];
+
 ReactDOM.render(
   <div>
     <GithubCorner
-      href="https://github.com/survivejs/react-component-boilerplate"
+      href="https://github.com/ymese/wordpress_react_toolkits"
       bannerColor="#fff"
       octoColor="#000"
       width={80}
