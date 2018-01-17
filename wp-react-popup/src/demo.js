@@ -1,4 +1,4 @@
-const demo = () => 'demo';
+const demo = () => 3;
 
 export default demo;
 
