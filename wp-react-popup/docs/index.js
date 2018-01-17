@@ -24,10 +24,6 @@ const pages = [
 ];
 
 // Catalog - logoSrc="../images/logo.png"
-const tabs = [{
-  name: 'First tab',
-  panel: <div>This is first tab</div>
-}];
 
 ReactDOM.render(
   <div>
@@ -47,7 +43,7 @@ ReactDOM.render(
         js: props => <CodeSpecimen {...props} lang="javascript" />,
         jsx: props => <ReactSpecimen {...props} />
       }}
-      title="Boilerplate"
+      title="Ymese"
     />
   </div>,
   document.getElementById('catalog')
