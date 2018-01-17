@@ -83,5 +83,9 @@
   "license": "MIT",
   "pre-push": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-tabs": "^2.2.1"
+  }
 }
