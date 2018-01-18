@@ -42,6 +42,7 @@
     "eslint-plugin-react": "^7.5.1",
     "gh-pages": "^1.1.0",
     "git-prepush-hook": "^1.0.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
     "purecss": "^1.0.0",
     "react": "^16.2.0",
@@ -70,6 +71,9 @@
       "js",
       "jsx"
     ],
+    "moduleNameMapper": {
+      "\\.(css)$": "identity-obj-proxy"
+    },
     "moduleDirectories": [
       "node_modules",
       "packages"

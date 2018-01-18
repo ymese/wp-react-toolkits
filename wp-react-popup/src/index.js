@@ -3,5 +3,4 @@
 //   demo: require('./demo').default
 // };
 
-module.exports = require('./tab').default;
-
+module.exports = require('./main');

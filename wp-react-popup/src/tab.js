@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import PropTypes from 'prop-types';
+import styles from 'react-tabs/style/react-tabs.css';
 
 export default class WpTab extends Component {
   render() {
