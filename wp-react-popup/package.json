@@ -3,7 +3,7 @@
   "description": "WordPress react tool kits for developers",
   "author": "BWPS",
   "user": "gaupoit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",
@@ -11,7 +11,7 @@
     "test:watch": "jest --watch --updateSnapshot",
     "test:lint": "eslint . --ignore-path .gitignore",
     "gh-pages": "catalog build docs",
-    "gh-pages:deploy": "gh-pages -d docs/build",
+    "gh-pages:deploy": "gh-pages -d docs/build -r https://github.com/ymese/ymese.github.io.git -b master",
     "dist:es6": "del-cli ./dist-es6 && cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
     "dist:modules": "del-cli ./dist-modules && cross-env BABEL_ENV=modules babel -w ./src --out-dir ./dist-modules",
     "preversion": "npm run test",
@@ -58,11 +58,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/ymese/wordpress_react_toolkits"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://ymese.github.io/wordpress_react_toolkits/",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/ymese/wordpress_react_toolkits/issues"
   },
   "jest": {
     "collectCoverage": true,
@@ -81,7 +81,8 @@
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate"
+    "wordpress",
+    "wordpress plugin"
   ],
   "license": "MIT",
   "pre-push": [
