@@ -21,6 +21,7 @@ export default class WpTab extends Component {
       .map(t => t.name)
       .map(name => <Tab key={name}>{name}</Tab>);
   }
+
   renderTabPanels() {
     const { tabs } = this.props;
     return tabs
