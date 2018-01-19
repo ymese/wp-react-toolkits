@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Table, AutoSizer, Column, SortDirection, SortIndicator} from 'react-virtualized';
 
-class WPReTable extends Component {
+export default class WPReTable extends Component {
 
   constructor(props) {
     super(props);
@@ -23,6 +23,7 @@ class WPReTable extends Component {
     this._noRowsRenderer = this._noRowsRenderer.bind(this);
     this._rowClassName = this._rowClassName.bind(this);
     this._getRowHeight = this._getRowHeight.bind(this);
+    this._getDatum = this._getDatum.bind(this);
     this._sort = this._sort.bind(this);
 
   }
@@ -42,9 +43,19 @@ class WPReTable extends Component {
       config
     } = this.state;
 
-    const rowGetter = ({ index }) => this._getDatum(sortedList, index);
     const { list } = this.props;
+    const sortedList = this._isSortEnabled()
+      ? list
+        .sortBy(item => item[sortBy])
+        .update(list =>
+          sortDirection === SortDirection.DESC
+            ? list.reverse()
+            : list
+        )
+      : list;
+    const rowGetter = ({ index }) => this._getDatum(sortedList, index);
     const rowCount = list.size;
+    console.log('List', rowCount);
 
     return(
       <div>
@@ -68,7 +79,7 @@ class WPReTable extends Component {
             sortDirection={sortDirection}
             width={width}
             >
-
+              {this.renderColumnFromConfig()}
             </Table>
           )}
         </AutoSizer>
@@ -93,7 +104,12 @@ class WPReTable extends Component {
   }
 
   _getDatum(list, index) {
+    console.log("Data", list.get(index));
     return list.get(index)
+  }
+
+  _isSortEnabled () {
+    return true;
   }
 
   _getRowHeight({ index }) {
@@ -103,6 +119,35 @@ class WPReTable extends Component {
 
   _sort({ sortBy, sortDirection }) {
     this.setState(...this.state, { sortBy, sortDirection });
+  }
+
+  renderColumnFromConfig() {
+    return this.state.config.columnsConfig.map((c) => {
+      if(c.cellRenderer) {
+        return (
+          <Column
+            key={c.dataKey}
+            label={c.label}
+            dataKey={c.dataKey}
+            disableSort={c.disableSort}
+            width={c.width}
+            cellRenderer={c.cellRenderer}
+            {...c}
+          />
+        );
+      } else {
+        return (
+          <Column
+            key={c.dataKey}
+            label={c.label}
+            dataKey={c.dataKey}
+            disableSort={c.disableSort}
+            width={c.width}
+          />
+        );
+      }
+
+    });
   }
 }
 

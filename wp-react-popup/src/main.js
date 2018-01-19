@@ -1,5 +1,6 @@
 import Tab from './tab';
 import Popup from './popup';
+import WPReTable, { ColumnConfig } from './table';
 
 class Main {
   inform() {
@@ -10,5 +11,7 @@ class Main {
 export {
   Tab,
   Main,
-  Popup
+  Popup,
+  WPReTable,
+  ColumnConfig
 };
