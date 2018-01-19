@@ -15,6 +15,7 @@ describe('Table', function () {
         new ColumnConfig('Age', 'age', false, 400)
       ]
     };
+
     const component = renderer
       .create(<div>
         <WPReTable list={data} config={configs} />
