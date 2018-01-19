@@ -6,6 +6,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
 import Immutable from "immutable";
 import {ColumnConfig} from "wp-react-toolkits";
+import 'wp-react-toolkits/style/style.css';
 
 class App extends Component {
 
@@ -14,6 +15,15 @@ class App extends Component {
 
     const data = Immutable.List([{
       name: 'Thinh',
+      age: 18
+    }, {
+      name: 'Rex',
+      age: 18
+    }, {
+      name: 'Tai',
+      age: 18
+    }, {
+      name: 'Lam',
       age: 18
     }]);
     const configs = {
