@@ -12,7 +12,7 @@ describe('Table', function () {
     const configs = {
       columnsConfig: [
         new ColumnConfig('Name', 'name', false, 300),
-        new ColumnConfig('Age', 'age', false, 400)
+        new ColumnConfig('Age', 'age', false, 500)
       ]
     };
 
