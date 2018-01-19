@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Table, AutoSizer, Column, SortDirection, SortIndicator} from 'react-virtualized';
+import { Table, AutoSizer, Column, SortDirection } from 'react-virtualized';
+import 'react-virtualized/styles.css';
 
 export default class WPReTable extends Component {
 
