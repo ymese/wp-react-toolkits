@@ -40,14 +40,14 @@ export default class Popup extends Component {
   }
 
   render() {
-    const { label, insideElement, closeIcon } = this.props;
+    const { label, insideElement, closeBtn } = this.props;
     return (
       <div>
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel={label}
           style={style}>
-          <span title="Close pop-up" className="close_btn" onClick={this.handleClosePopup}>{closeIcon}</span>
+          {closeBtn}
           { insideElement }
         </ReactModal>
       </div>
@@ -76,6 +76,6 @@ Popup.propTypes = {
   style: PropTypes.object,
   closeTitle: PropTypes.string,
   insideElement: PropTypes.element.isRequired,
-  closeIcon: PropTypes.element,
+  closeBtn: PropTypes.element.isRequired,
   onRef: PropTypes.func.isRequired
 }
