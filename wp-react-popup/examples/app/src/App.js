@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-import { Tab, Popup } from 'wp-react-toolkits';
+import { Tab, Popup, WPReTable } from 'wp-react-toolkits';
 import logo from './logo.svg';
 import './App.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
+import Immutable from "immutable";
+import {ColumnConfig} from "wp-react-toolkits";
 
 class App extends Component {
 
   constructor(props) {
     super(props);
 
+    const data = Immutable.List([{
+      name: 'Thinh',
+      age: 18
+    }]);
+    const configs = {
+      columnsConfig: [
+        new ColumnConfig('Name', 'name', false, 300),
+        new ColumnConfig('Age', 'age', false, 400)
+      ]
+    };
+
     this.tabs = [{
-      name: 'This is tab1',
+      name: 'This is Table',
       panel: (
-        <div><p>Hello tab1</p></div>
+        <div>
+          <WPReTable list={data} config={configs} />
+        </div>
       )
     }, {
       name: 'This is tab2',
