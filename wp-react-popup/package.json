@@ -94,6 +94,7 @@
   ],
   "dependencies": {
     "prop-types": "^15.6.0",
+    "react-modal": "^3.1.11",
     "react-tabs": "^2.2.1"
   }
 }

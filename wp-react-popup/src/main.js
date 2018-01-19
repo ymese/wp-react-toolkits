@@ -1,4 +1,5 @@
 import Tab from './tab';
+import Popup from './popup';
 
 class Main {
   inform() {
@@ -8,5 +9,6 @@ class Main {
 
 export {
   Tab,
-  Main
+  Main,
+  Popup
 };

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Tab from 'wp-react-toolkits';
+import { Tab, Popup } from 'wp-react-toolkits';
 import logo from './logo.svg';
 import './App.css';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
 
 class App extends Component {
 
@@ -19,23 +21,53 @@ class App extends Component {
         <div><p>Hello tab2</p></div>
       )
     }];
+
+    this.insideElement = (
+      <div>
+        <Tab tabs={this.tabs}/>
+      </div>
+    );
+    this.handleShowPopup = this.handleShowPopup.bind(this);
+    this.handleClosePopup = this.handleClosePopup.bind(this);
+    this.closeBtn =
+      (<span title="Close pop-up"
+             className="close_btn"
+             onClick={this.handleClosePopup}>
+        <FontAwesomeIcon icon={faWindowClose} />
+      </span>);
   }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to WordPress React Tool Kits</h1>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div>This is a tab</div>
+        <hr/>
         <div>
-          <Tab tabs={this.tabs}/>
+          <p>This is a popup</p>
+          <div><input type={'button'} onClick={this.handleShowPopup} value={"Show popup"}/></div>
+          <Popup
+            label={'This is popup'}
+            closeTitle={'Close popup'}
+            insideElement={this.insideElement}
+            closeBtn={this.closeBtn}
+            onRef={ref => { this.child = ref}} />
         </div>
       </div>
     );
+  }
+
+  handleShowPopup() {
+    this.child.handleOpenPopup();
+  }
+
+  handleClosePopup() {
+    this.child.handleClosePopup();
   }
 }
 
