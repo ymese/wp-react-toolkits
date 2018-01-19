@@ -3,7 +3,7 @@ import { Tab, Popup } from 'wp-react-toolkits';
 import logo from './logo.svg';
 import './App.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faCoffee from '@fortawesome/fontawesome-free-solid/faWindowClose'
+import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
 
 class App extends Component {
 
@@ -27,9 +27,14 @@ class App extends Component {
         <Tab tabs={this.tabs}/>
       </div>
     );
-
-    this.closeIcon = <FontAwesomeIcon icon={faCoffee}/>;
     this.handleShowPopup = this.handleShowPopup.bind(this);
+    this.handleClosePopup = this.handleClosePopup.bind(this);
+    this.closeBtn =
+      (<span title="Close pop-up"
+             className="close_btn"
+             onClick={this.handleClosePopup}>
+        <FontAwesomeIcon icon={faWindowClose} />
+      </span>);
   }
 
   render() {
@@ -50,7 +55,7 @@ class App extends Component {
             label={'This is popup'}
             closeTitle={'Close popup'}
             insideElement={this.insideElement}
-            closeIcon={this.closeIcon}
+            closeBtn={this.closeBtn}
             onRef={ref => { this.child = ref}} />
         </div>
       </div>
@@ -59,6 +64,10 @@ class App extends Component {
 
   handleShowPopup() {
     this.child.handleOpenPopup();
+  }
+
+  handleClosePopup() {
+    this.child.handleClosePopup();
   }
 }
 
