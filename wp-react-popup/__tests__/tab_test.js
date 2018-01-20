@@ -12,7 +12,6 @@ describe('Tab', function () {
       )
     }, {
       name: 'Test 2',
-
     }];
     const component = renderer
       .create(<Tab tabs={tabs}>Ymese 123</Tab>)
