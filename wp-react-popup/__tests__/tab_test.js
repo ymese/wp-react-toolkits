@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Tab from '../dist-modules';
+import {Tab, Main} from '../dist-modules';
 
-describe('Boilerplate', function () {
+describe('Tab', function () {
   it('should render correctly', function () {
     // TODO: test something now
     const tabs = [{
@@ -12,7 +12,6 @@ describe('Boilerplate', function () {
       )
     }, {
       name: 'Test 2',
-
     }];
     const component = renderer
       .create(<Tab tabs={tabs}>Ymese 123</Tab>)
@@ -20,3 +19,9 @@ describe('Boilerplate', function () {
     expect(component).toMatchSnapshot();
   });
 });
+
+describe('Main', function () {
+  it('should inform main', function () {
+
+  })
+})

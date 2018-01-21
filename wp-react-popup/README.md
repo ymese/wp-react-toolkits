@@ -2,29 +2,20 @@
 
 # WordPress React Tool Kits - Useful React toolkit for WordPress Developer
 
-This project helps WordPress develop to re-use React tool kits for their plugins.
+This project helps WordPress develop to reuse React tool kits for their plugins. We are supporting to following tool kits:
+
++ Modal
++ Tab
++ Table
 
 > Check out [BWPS - Webpack and React](http://bwps.com/) to dig deeper into the topic.
 
-## Basic Usage
+## Installation
 
-Clone the repo : `git clone https://github.com/ymese/ymese.github.io`.
 
-To get started with fresh history, do this:
+To get started with this cool project, do this:
 
-1. `cd my-component`
-2. `rm -rf .git` (or in Windows `rmdir .git /S /Q`) - Remove Git database
-3. `git init` - Initialize a new Git repository
-4. `git add .` - Add all files to staging
-5. `git commit -am "Initial commit"` - Commit the files
-
-After this you should push the project to some remote.
-
-If you want to replace project meta information (author etc.), consider using a tool like [replace-project-meta](https://www.npmjs.com/package/replace-project-meta).
-
-There are following available tool kits:
-
-### Tab
+1. `npm install --save npm i wp-react-toolkits`
 
 ## Highlighting Demo for the Site
 

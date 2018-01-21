@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import PropTypes from 'prop-types';
+import styles from 'react-tabs/style/react-tabs.css';
 
 export default class WpTab extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class WpTab extends Component {
       .map(t => t.name)
       .map(name => <Tab key={name}>{name}</Tab>);
   }
+
   renderTabPanels() {
     const { tabs } = this.props;
     return tabs
