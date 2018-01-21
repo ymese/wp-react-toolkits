@@ -15,7 +15,7 @@ This project helps WordPress develop to reuse React tool kits for their plugins.
 
 To get started with this cool project, do this:
 
-1. `npm install --save npm i wp-react-toolkits`
+1. `npm install --save wp-react-toolkit`
 
 ## Highlighting Demo for the Site
 
