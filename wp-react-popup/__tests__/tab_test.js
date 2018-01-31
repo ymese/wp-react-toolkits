@@ -14,7 +14,7 @@ describe('Tab', function () {
       name: 'Test 2',
     }];
     const component = renderer
-      .create(<Tab tabs={tabs}>Ymese 123</Tab>)
+      .create(<Tab tabs={tabs} onRef={ref => {this.child = ref}}>Ymese 123</Tab>)
       .toJSON();
     expect(component).toMatchSnapshot();
   });
