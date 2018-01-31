@@ -14,7 +14,7 @@
     "gh-pages:deploy": "gh-pages -d docs/build -r https://github.com/ymese/ymese.github.io.git -b master",
     "dist:es6": "del-cli ./dist-es6 && cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
     "dist:modules": "del-cli ./dist-modules && cross-env BABEL_ENV=modules babel -w ./src --out-dir ./dist-modules",
-    "build:css": "postcss src/table.css -o style/style.css --user autoprefixer",
+    "build:css": "postcss src/*.css --dir style/ --user autoprefixer",
     "preversion": "npm run test",
     "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
@@ -100,8 +100,10 @@
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react-modal": "^3.1.11",
+    "react-redux": "^5.0.6",
     "react-tabs": "^2.2.1",
     "react-virtualized": "^9.17.3",
+    "redux": "^3.7.2",
     "redux-form": "^7.2.1"
   }
 }
