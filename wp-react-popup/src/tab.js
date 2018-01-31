@@ -4,9 +4,23 @@ import PropTypes from 'prop-types';
 import styles from 'react-tabs/style/react-tabs.css';
 
 export default class WpTab extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeTab: 0
+    };
+
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
   render() {
     return (
-      <Tabs>
+      <Tabs
+        onSelect={this.handleSelect}
+        selectedIndex={this.state.activeTab}
+      >
         <TabList>
           {this.renderTabs()}
         </TabList>
@@ -29,9 +43,24 @@ export default class WpTab extends Component {
       .map((panel, key) => <TabPanel key={`${key}_panel`}>{panel}</TabPanel>);
   }
 
+  handleSelect(index) {
+    const { tabs } = this.props;
+    const activeTab = index > tabs.length - 1 ? tabs.length - 1 : index;
+    console.log('Tab', index, activeTab);
+    this.setState(...this.state, { activeTab });
+  }
+
+  componentDidMount() {
+    this.props.onRef(this);
+  }
+
+  componentWillMount() {
+    this.props.onRef(undefined);
+  }
 }
 
 WpTab.propTypes = {
- tabs: PropTypes.array.isRequired
+  tabs: PropTypes.array.isRequired,
+  onRef: PropTypes.func.isRequired
 };
 

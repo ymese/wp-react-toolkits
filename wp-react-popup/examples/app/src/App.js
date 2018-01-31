@@ -6,7 +6,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
 import Immutable from "immutable";
 import {ColumnConfig} from "wp-react-toolkits";
-import 'wp-react-toolkits/style/style.css';
+import 'wp-react-toolkits/style/table.css';
 
 class App extends Component {
 
@@ -33,6 +33,8 @@ class App extends Component {
       ]
     };
 
+    this.handleChangeTab = this.handleChangeTab.bind(this);
+
     this.tabs = [{
       name: 'This is Table',
       panel: (
@@ -43,17 +45,21 @@ class App extends Component {
     }, {
       name: 'This is tab2',
       panel: (
-        <div><p>Hello tab2</p></div>
+        <div>
+          <input type="button" value="Change tab1" onClick={this.handleChangeTab} />
+          <p>Hello tab2</p>
+        </div>
       )
     }];
 
     this.insideElement = (
       <div>
-        <Tab tabs={this.tabs}/>
+        <Tab tabs={this.tabs} onRef={(ref) => { this.child = ref; }} />
       </div>
     );
     this.handleShowPopup = this.handleShowPopup.bind(this);
     this.handleClosePopup = this.handleClosePopup.bind(this);
+
     this.closeBtn =
       (<span title="Close pop-up"
              className="close_btn"
@@ -81,7 +87,7 @@ class App extends Component {
             closeTitle={'Close popup'}
             insideElement={this.insideElement}
             closeBtn={this.closeBtn}
-            onRef={ref => { this.child = ref}} />
+            onRef={(ref) => { this.child = ref; }} />
         </div>
       </div>
     );
@@ -93,6 +99,10 @@ class App extends Component {
 
   handleClosePopup() {
     this.child.handleClosePopup();
+  }
+
+  handleChangeTab() {
+    this.child.handleSelect(0);
   }
 }
 
