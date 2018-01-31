@@ -6,7 +6,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faWindowClose from '@fortawesome/fontawesome-free-solid/faWindowClose'
 import Immutable from "immutable";
 import {ColumnConfig} from "wp-react-toolkits";
-import 'wp-react-toolkits/style/style.css';
+import 'wp-react-toolkits/style/table.css';
 
 class App extends Component {
 
