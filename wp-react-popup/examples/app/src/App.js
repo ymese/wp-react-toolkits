@@ -54,7 +54,7 @@ class App extends Component {
 
     this.insideElement = (
       <div>
-        <Tab tabs={this.tabs} onRef={(ref) => { this.child = ref; }} />
+        <Tab tabs={this.tabs} onRef={(ref) => { this.childTab = ref; }} defaultTab={1} />
       </div>
     );
     this.handleShowPopup = this.handleShowPopup.bind(this);
@@ -102,7 +102,7 @@ class App extends Component {
   }
 
   handleChangeTab() {
-    this.child.handleSelect(0);
+    this.childTab.handleSelect(0);
   }
 }
 

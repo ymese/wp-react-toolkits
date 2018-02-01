@@ -7,9 +7,9 @@ export default class WpTab extends Component {
 
   constructor(props) {
     super(props);
-
+    const { defaultTab } = this.props;
     this.state = {
-      activeTab: 0
+      activeTab: defaultTab || 0
     };
 
     this.handleSelect = this.handleSelect.bind(this);
@@ -61,6 +61,7 @@ export default class WpTab extends Component {
 
 WpTab.propTypes = {
   tabs: PropTypes.array.isRequired,
-  onRef: PropTypes.func.isRequired
+  onRef: PropTypes.func.isRequired,
+  defaultTab: PropTypes.number
 };
 
