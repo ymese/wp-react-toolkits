@@ -17,8 +17,7 @@ export default class WPReTable extends Component {
       scrollToIndex: undefined,
       sortBy: 'index',
       sortDirection: SortDirection.ASC,
-      useDynamicRowHeight: false,
-      config: props.config
+      useDynamicRowHeight: false
     };
 
     this._noRowsRenderer = this._noRowsRenderer.bind(this);
@@ -41,7 +40,6 @@ export default class WPReTable extends Component {
       sortBy,
       sortDirection,
       useDynamicRowHeight,
-      config
     } = this.state;
 
     const { list } = this.props;
@@ -123,8 +121,9 @@ export default class WPReTable extends Component {
   }
 
   renderColumnFromConfig() {
-    return this.state.config.columnsConfig.map((c) => {
-      if(c.cellRenderer) {
+    const { config } = this.props;
+    return config.columnsConfig.map((c) => {
+      if (c.cellRenderer) {
         return (
           <Column
             key={c.dataKey}
