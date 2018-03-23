@@ -3,7 +3,7 @@
   "description": "WordPress react tool kits for developers",
   "author": "BWPS",
   "user": "gaupoit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",
