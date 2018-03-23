@@ -27,19 +27,25 @@ class App extends Component {
       age: 18
     }]);
     const configs = {
-      columnsConfig: [
+      columnsConfig: Immutable.List([
         new ColumnConfig('Name', 'name', false, 300),
         new ColumnConfig('Age', 'age', false, 400)
-      ]
+      ])
+    };
+    this.state = {
+      data,
+      configs
     };
 
     this.handleChangeTab = this.handleChangeTab.bind(this);
+    this.handleChangeDataClick = this.handleChangeDataClick.bind(this);
 
     this.tabs = [{
       name: 'This is Table',
       panel: (
         <div>
-          <WPReTable list={data} config={configs} />
+          <input type="button" value="Update data" onClick={this.handleChangeDataClick} />
+          {/*<WPReTable list={this.state.data} config={this.state.configs} />*/}
         </div>
       )
     }, {
@@ -89,6 +95,10 @@ class App extends Component {
             closeBtn={this.closeBtn}
             onRef={(ref) => { this.child = ref; }} />
         </div>
+        <div>
+          <input type="button" value="Update data" onClick={this.handleChangeDataClick} />
+          <WPReTable list={this.state.data} config={this.state.configs} />
+        </div>
       </div>
     );
   }
@@ -104,6 +114,35 @@ class App extends Component {
   handleChangeTab() {
     this.childTab.handleSelect(0);
   }
+
+  handleChangeDataClick(evt) {
+    evt.preventDefault();
+    const data = Immutable.List([{
+      nickname: 'Thinh',
+      age: 18
+    }, {
+      nickname: 'Rex',
+      age: 18
+    }, {
+      nickname: 'Tai',
+      age: 18
+    }, {
+      nickname: 'Lam',
+      age: 18
+    }]);
+    const configs = {
+      columnsConfig: Immutable.List([
+        new ColumnConfig('Nick name', 'nickname', false, 300),
+        new ColumnConfig('Hello', 'age', false, 400)
+      ])
+    };
+    this.setState({
+      data,
+      configs
+    });
+    console.log('Update data clicked', this.state.data, this.state.configs);
+  }
+
 }
 
 export default App;
