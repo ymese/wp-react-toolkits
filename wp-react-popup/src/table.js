@@ -10,7 +10,7 @@ export default class WPReTable extends Component {
     this.state = {
       disableHeader: false,
       headerHeight: 30,
-      height: 270,
+      height: this.props.customStyle ? this.props.customStyle.height : 270,
       hideIndexRow: false,
       overscanRowCount: 10,
       rowHeight: 40,
