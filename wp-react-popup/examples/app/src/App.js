@@ -97,7 +97,7 @@ class App extends Component {
         </div>
         <div>
           <input type="button" value="Update data" onClick={this.handleChangeDataClick} />
-          <WPReTable list={this.state.data} config={this.state.configs} />
+          <WPReTable list={this.state.data} config={this.state.configs} customStyle={{height: 1000}} />
         </div>
       </div>
     );
