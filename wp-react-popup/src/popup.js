@@ -16,15 +16,14 @@ const style = {
     top: '20%',
     left: '200px',
     right: '40px',
-    bottom: '15%',
+    bottom: '8%',
     border: '1px solid #ccc',
     background: '#fff',
     overflow: 'auto',
     WebkitOverflowScrolling: 'touch',
     borderRadius: '4px',
     outline: 'none',
-    padding: '20px'
-
+    padding: '20px 20px 20px'
   }
 }
 

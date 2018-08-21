@@ -3,7 +3,7 @@
   "description": "WordPress react tool kits for developers",
   "author": "BWPS",
   "user": "gaupoit",
-  "version": "0.1.7",
+  "version": "0.1.10",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",
@@ -17,7 +17,6 @@
     "build:css": "postcss src/*.css --dir style/ --user autoprefixer",
     "preversion": "npm run test",
     "prepublishOnly": "npm run dist:es6 && npm run dist:modules",
-    "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
   },
   "main": "dist-modules",
