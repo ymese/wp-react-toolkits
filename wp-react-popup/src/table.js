@@ -89,7 +89,7 @@ export default class WPReTable extends Component {
   _noRowsRenderer() {
     return (
       <div className="noRows">
-        There are no private links
+        There's nothing here, yet.
       </div>
     )
   }
