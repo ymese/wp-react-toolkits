@@ -9,7 +9,8 @@ const style = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    zIndex: 10001,
   },
   content: {
     position: 'absolute',
@@ -23,49 +24,51 @@ const style = {
     WebkitOverflowScrolling: 'touch',
     borderRadius: '4px',
     outline: 'none',
-    padding: '20px 20px 20px'
-  }
-}
+    padding: '20px 20px 20px',
+  },
+};
 
 export default class Popup extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
-      showModal: false
-    }
+      showModal: false,
+    };
 
     this.handleClosePopup = this.handleClosePopup.bind(this);
     this.handleOpenPopup = this.handleOpenPopup.bind(this);
   }
 
-  render() {
+  render () {
     const { label, insideElement, closeBtn } = this.props;
     return (
       <div>
         <ReactModal
+          className="pda-modal"
           isOpen={this.state.showModal}
           contentLabel={label}
-          style={style}>
+          style={style}
+        >
           {closeBtn}
-          { insideElement }
+          {insideElement}
         </ReactModal>
       </div>
-    )
+    );
   }
 
-  handleClosePopup() {
+  handleClosePopup () {
     this.setState({ showModal: false });
   }
 
-  handleOpenPopup() {
+  handleOpenPopup () {
     this.setState({ showModal: true });
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.onRef(this);
   }
 
-  componentWillMount() {
+  componentWillMount () {
     this.props.onRef(undefined);
   }
 }
@@ -76,5 +79,5 @@ Popup.propTypes = {
   closeTitle: PropTypes.string,
   insideElement: PropTypes.element.isRequired,
   closeBtn: PropTypes.element.isRequired,
-  onRef: PropTypes.func.isRequired
-}
+  onRef: PropTypes.func.isRequired,
+};
