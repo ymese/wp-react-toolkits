@@ -46,7 +46,6 @@ export default class WpTab extends Component {
   handleSelect(index) {
     const { tabs } = this.props;
     const activeTab = index > tabs.length - 1 ? tabs.length - 1 : index;
-    console.log('Tab', index, activeTab);
     this.setState(...this.state, { activeTab });
   }
 

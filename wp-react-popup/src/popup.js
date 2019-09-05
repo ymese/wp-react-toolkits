@@ -10,14 +10,14 @@ const style = {
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.75)',
-    zIndex: 10001,
   },
   content: {
     position: 'absolute',
-    top: '20%',
+    top: '50%',
+    bottom: 'auto',
+    transform: 'translate(0%,-50%)',
     left: '200px',
     right: '40px',
-    bottom: '8%',
     border: '1px solid #ccc',
     background: '#fff',
     overflow: 'auto',
@@ -25,6 +25,7 @@ const style = {
     borderRadius: '4px',
     outline: 'none',
     padding: '20px 20px 20px',
+    minHeight: '350px',
   },
 };
 
@@ -48,6 +49,7 @@ export default class Popup extends Component {
           isOpen={this.state.showModal}
           contentLabel={label}
           style={style}
+          bodyOpenClassName="PdaModal_Body--open"
         >
           {closeBtn}
           {insideElement}

@@ -54,7 +54,6 @@ export default class WPReTable extends Component {
       : list;
     const rowGetter = ({ index }) => this._getDatum(sortedList, index);
     const rowCount = list.size;
-    console.log('List', rowCount);
 
     return(
       <div>
@@ -103,7 +102,6 @@ export default class WPReTable extends Component {
   }
 
   _getDatum(list, index) {
-    console.log("Data", list.get(index));
     return list.get(index)
   }
 
